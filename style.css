@@ -31,10 +31,6 @@
     z-index: 10;
   }
 
-  .dropdown {
-      
-  }
-  
   .nav-wrapper {
     margin: auto;
     text-align: center;
@@ -56,13 +52,10 @@
     height: 60px;
     letter-spacing: 1px;
   } @media(max-width: 768px) {
-      .logo {
-  /*       margin-left: 5px; */
-      }
+
     }
   
   #navbar ul {
-    display: inline-block;
     float: right;
     list-style: none;
     /* margin-right: 14px; */
@@ -147,4 +140,31 @@
 
 .chapter {
     border-width: 1px;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
