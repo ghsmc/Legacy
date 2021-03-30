@@ -1,30 +1,22 @@
+var quotes = ["My one big mistake in life has been providing a trust fund for my five children. I’m very comfortable paying for an education for as long as they want to study in a reputable university. However, providing additional funds so they could have a lifestyle beyond what they have achieved on their own was a mistake.",
+  "Choose work you enjoy and that serves as many people as possible. Focus on serving others — not on building wealth. Serve well, and money will follow.",
+  "Surround yourself with the smartest, most ethical people you can find. Set clear goals, communicate them clearly, and delegate."]
+var authors = ["Dick Reesch", "Norman Barrett", "Judy Ley Allen"]
+var years = ["1960", "1961", "1963"]
+var types = ["Relationships and Family", "Careers", "Business"]
 
-runOncePerDay();
+change();
 
-Quotes = ["Quote1", "Quote2", "Quote3", "Quote4", "Quote5"];
-Authors = ["Author1 '23", "Author2 '23", "Author3 '23", "Author4 '23", "Author5 '23"];
-Type = ["Type1","Type2","Type3","Type4","Type5"];
+function change() {
+  var R = getRandomInt(3);
+  var classyear = "'" + years[R].slice(-2);
 
-function hasOneDayPassed()
-  // get today's date. eg: "7/37/2007"
-  let date = new Date().toLocaleDateString();
-
-  // if there's a date in localstorage and it's equal to the above: 
-  // inferring a day has yet to pass since both dates are equal.
-  if( localStorage.yourapp_date == date )  {
-      return false;
-
-  // this portion of logic occurs when a day has passed
-  localStorage.yourapp_date = date;
-  return true;
+  document.getElementById("quote").innerHTML = quotes[R];
+  document.getElementById("author").innerHTML = authors[R];
+  document.getElementById("classyear").innerHTML = classyear;
+  document.getElementById("type").innerHTML = types[R];
 }
 
-
-// some function which should run once a day
-function runOncePerDay(){
-//   if( !hasOneDayPassed() ) return false;
-    random = Math.floor(Math.random() * 6);
-    document.getElementById("quote").innerHTML(Quotes[random]);
-    document.getElementById("author").innerHTML(Authors[random]);
-    document.getElementById("type").innerHTML(Type[random]);
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
 }
